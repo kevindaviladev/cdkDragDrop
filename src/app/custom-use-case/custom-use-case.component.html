@@ -1,0 +1,35 @@
+<div class="container" cdkDropListGroup>
+  <div class="cards">
+    <h1>My list</h1>
+    <div
+      class="card-list"
+      cdkDropList
+      [cdkDropListData]="myList"
+      (cdkDropListDropped)="dropOnList($event)"
+      [cdkDropListEnterPredicate]="predicate"
+    >
+      <div
+        class="card-item"
+        *ngFor="let card of myList"
+        cdkDrag
+        [cdkDragData]="card"
+      >
+        <img [src]="card.card_images[0].image_url_small" alt="" />
+      </div>
+    </div>
+  </div>
+  <div class="cards">
+    <h1>Card searched list</h1>
+    <div class="card-list" cdkDropList [cdkDropListData]="cards">
+      <div
+        class="card-item"
+        *ngFor="let card of cards"
+        cdkDrag
+        [cdkDragData]="card"
+      >
+        <img [src]="card.card_images[0].image_url_small" alt="" />
+      </div>
+    </div>
+  </div>
+</div>
+{{ myList | json }}

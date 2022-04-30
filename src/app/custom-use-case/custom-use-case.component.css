@@ -1,0 +1,26 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5em;
+}
+
+.cards {
+  height: 100%;
+  border: 1px solid #1d90ce;
+  border-radius: 8px;
+  text-align: center;
+  color: #1d90ce;
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  height: 100%;
+}
+.card__item img {
+  width: 100%;
+  object-fit: cover;
+}
